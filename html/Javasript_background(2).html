@@ -1,0 +1,25 @@
+
+<html>
+<head>
+    <title>Color Changing Button</title>
+</head>
+<body bgcolor="lightblue">
+     <center>
+    <h1 style="color:red"><u><b>COLOR CHANGING BACKGROUND</u></b></h1>
+    <p>Click the button to change through different background colors.</p>
+
+    <button id="changeColorBtn">Change Color</button>
+
+    <script>
+        const button = document.getElementById('changeColorBtn');
+        let colorIndex = 0;
+        const colors = ['aqua', 'lightgray', 'darkorange' , 'LightSeaGreen'];
+
+        button.addEventListener('click', () => {
+            document.body.style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        });
+    </script>
+    </center>	
+</body>
+</html>

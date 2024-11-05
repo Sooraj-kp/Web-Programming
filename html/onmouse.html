@@ -1,0 +1,38 @@
+
+
+<html>
+	<head>
+ 
+  		<title>Hover Effect</title>
+  		<style>
+    		.hover-content {
+    		display: none;
+      		text-align: center;
+    		}
+  		</style>
+	</head>
+	<body bgcolor="powderblue">
+		<center>
+		<div id="mainContent" onmouseover="showContent()" onmouseout="hideContent()">
+  		<h2 style="color:red"><u><b>DRAG THE MOUSE OVER HERE</b></u></h2>
+		</div>
+
+		<div id="hoverContent" class="hover-content">
+  			<img src="C:\Users\Admin\Downloads\picture.jpg" alt="New Image">
+ 		 	<p><b>THE PICTURE IS....</b></p>
+		</div>
+
+			<script>
+  				function showContent() {
+    					document.getElementById('hoverContent').style.display = 'block';
+ 			 }
+
+  				function hideContent() {
+   					document.getElementById('hoverContent').style.display = 'none';
+  			 }
+			</script>
+		
+		</center>
+
+	</body>
+</html>
