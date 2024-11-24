@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            text-align: center;
+            font-size: larger;
+        }
+    </style>
+    <title>Registration Form</title>
+    <script src="validationjs.js"></script>
+</head>
+<body bgcolor="#3498db">
+    <h1>REGISTRATION FORM</h1>
+    <form onsubmit="return validateForm()">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname">
+            <br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
+            <br><br>
+            <label for="usrn">Username:</label>
+            <input type="text" id="usrn" name="usrn">
+            <br><br>
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd">
+            <br><br>
+            <label for="cpwd">Confirmation:</label>
+            <input type="password" id="cpwd" name="cpwd">
+            <br><br>
+            <label for="gender">Gender:</label> 
+            <input type="radio" id="male" name="gender" value="Male"> Male
+            <input type="radio" id="female" name="gender" value="Female"> Female
+            <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Details</legend>
+            <label for="mob">Mobile No:</label>
+            <input type="text" id="mob" name="mob" maxlength="10">
+            <br><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="5" cols="15"></textarea>
+            <br><br>
+            <label for="email">Email id:</label>
+            <input type="email" id="email" name="email">
+        </fieldset>
+        <br>
+        <input type="submit" value="SUBMIT">
+    </form>
+</body>
+</html>
