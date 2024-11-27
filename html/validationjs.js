@@ -1,91 +1,71 @@
-
 function validateForm() {
-    var firstName = document.getElementById("fname").value.trim();
-    var lastName = document.getElementById("lname").value.trim();
-    var username = document.getElementById("usrn").value.trim();
-    var password = document.getElementById("pwd").value;
-    var confirmPassword = document.getElementById("cpwd").value;
-    var mobile = document.getElementById("mob").value.trim();
-    var email = document.getElementById("email").value.trim();
-    var gender = document.querySelector('input[name="gender"]:checked');
-    var address = document.getElementById("address").value.trim();
+    // Get form elements
+    const fname = document.getElementById("fname").value.trim();
+    const lname = document.getElementById("lname").value.trim();
+    const usrn = document.getElementById("usrn").value.trim();
+    const pwd = document.getElementById("pwd").value;
+    const cpwd = document.getElementById("cpwd").value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const mob = document.getElementById("mob").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const email = document.getElementById("email").value.trim();
 
-    if (firstName === "") {
-        alert("First Name must be filled out");
-        document.getElementById("fname").focus();
+    // Validate first name
+    if (fname === "") {
+        alert("First name cannot be empty");
         return false;
     }
 
-    if (lastName === "") {
-        alert("Last Name must be filled out");
-        document.getElementById("lname").focus();
+    // Validate last name
+    if (lname === "") {
+        alert("Last name cannot be empty");
         return false;
     }
 
-    if (username === "") {
-        alert("Username must be filled out");
-        document.getElementById("usrn").focus();
+    // Validate username
+    if (usrn === "") {
+        alert("Username cannot be empty");
         return false;
     }
 
-    if (password === "") {
-        alert("Password must be filled out");
-        document.getElementById("pwd").focus();
+    // Validate password
+    if (pwd.length < 6) {
+        alert("Password must be at least 6 characters long");
         return false;
     }
 
-    if (confirmPassword === "") {
-        alert("Please confirm your password");
-        document.getElementById("cpwd").focus();
-        return false;
-    }
-
-    if (password !== confirmPassword) {
+    // Validate password confirmation
+    if (pwd !== cpwd) {
         alert("Passwords do not match");
-        document.getElementById("pwd").focus();
         return false;
     }
 
-    if (password.length < 8) {
-        alert("Password must be at least 8 characters long");
-        document.getElementById("pwd").focus();
-        return false;
-    }
-
+    // Validate gender
     if (!gender) {
-        alert("Gender must be selected");
+        alert("Please select your gender");
         return false;
     }
 
-    if (mobile === "") {
-        alert("Mobile Number must be filled out");
-        document.getElementById("mob").focus();
+    // Validate mobile number
+    if (!/^\d{10}$/.test(mob)) {
+        alert("Mobile number must be 10 digits long");
         return false;
     }
 
-    if (!/^\d{10}$/.test(mobile)) {
-        alert("Mobile Number must be exactly 10 digits");
-        document.getElementById("mob").focus();
-        return false;
-    }
-
+    // Validate address
     if (address === "") {
-        alert("Address must be filled out");
-        document.getElementById("address").focus();
+        alert("Address cannot be empty");
         return false;
     }
 
-    if (email === "") {
-        alert("Email must be filled out");
-        document.getElementById("email").focus();
-        return false;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Validate email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
         alert("Please enter a valid email address");
-        document.getElementById("email").focus();
         return false;
     }
 
+    // All validations passed
+    alert("Form submitted successfully!");
     return true;
 }
