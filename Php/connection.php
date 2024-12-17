@@ -29,8 +29,15 @@
         echo "Error creating table: " . $conn->error;
     }
 
-    $ins = "INSERT INTO Mygst (firstname, lastname, email) VALUES ('suii', 'k', 'acv@gmail.com')";
-    
+    $ins = "INSERT INTO Mygst (firstname, lastname, email) VALUES ('ansar', 'kp', 'akp2@gmail.com')";
+    $ins1 = "INSERT INTO Mygst (firstname, lastname, email) VALUES ('ramesh', 'pp', 'rhp2@gmail.com')";
+    $ins2 = "INSERT INTO Mygst (firstname, lastname, email) VALUES ('manu', 'u u', 'mau2@gmail.com')"; 
+    $ins3 = "INSERT INTO Mygst (firstname, lastname, email) VALUES ('arav', 'n u', 'anp2@gmail.com')"; 
+
+
+    $conn -> query($ins1);
+    $conn -> query($ins2);
+    $conn -> query($ins3);
    
 
     if ($conn->query($ins) === TRUE) {
