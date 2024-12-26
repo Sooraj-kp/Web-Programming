@@ -1,5 +1,7 @@
 
 <!DOCTYPE html>
+    <html>
+    <head>
     <title>Student Names</title>
     <style>
         body {
@@ -18,7 +20,7 @@
 <body>
     <h1>Student Names</h1>
     <?php
-            $students = ["jyothi", "janib", "somin", "David", "cris"];
+            $students = ["Jyothi", "Janib", "Niyas", "David", "Cris"];
 
             echo "<h2>Original Array</h2>";
             echo "<pre>";
