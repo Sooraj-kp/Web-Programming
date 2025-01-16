@@ -1,0 +1,67 @@
+
+<html>
+<head>
+    <title>Different Types of Frames</title>
+</head>
+<body>
+
+    <h2 style="text-align: center;"><u>Frames Example: Floating, Navigation, and Mixed Frames</u></h2>
+
+    <h3>Floating Frame</h3>
+    <p>This frame floats within the page, displaying content from another source:</p>
+    <iframe src="https://www.wikipedia.org" width="300" height="200" title="Floating Frame" style="border: 1px solid #000;"></iframe>
+
+    <br><br>
+
+    <h3>Navigation Frame</h3>
+    <p>This frame is used as a navigation menu, allowing users to load content in another frame:</p>
+    
+    <table width="100%" border="1">
+        <tr>
+            <td width="25%">
+                <iframe srcdoc="
+                    <h3>Navigation Menu</h3>
+                    <ul>
+                        <li><a href='https://www.bbc.com' target='contentframe'>BBC</a></li>
+                        <li><a href='ttps://www.wikipedia.org' target='contentframe'>Wikipedia</a></li>
+                        <li><a href='https://www.nationalgeographic.com' target='contentframe'>National Geographic</a></li>
+                    </ul>" 
+                    title="Navigation Frame" width="100%" height="200" style="border: none;">
+                </iframe>
+            </td>
+            <td width="75%">
+                <iframe src="https://www.bbc.com" name="contentframe" width="100%" height="200" title="Content Frame" style="border: none;"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <h3>Mixed Frame</h3>
+    <p>This layout mixes both navigation and floating frames:</p>
+    
+    <table width="100%" border="1">
+        <tr>
+            <td width="25%">
+                <iframe srcdoc="
+                    <h3>Mixed Navigation Menu</h3>
+                    <ul>
+                        <li><a href='https://www.wikipedia.org' target='mixedContentFrame'>Wikipedia</a></li>
+                        <li><a href='https://www.example.com' target='mixedContentFrame'>Example</a></li>
+                    </ul>"
+                    title="Mixed Navigation Frame" width="100%" height="200" style="border: none;">
+                </iframe>
+            </td>
+            <td width="75%">
+                <iframe src="https://www.wikipedia.org" name="mixedContentFrame" width="100%" height="200" title="Mixed Content Frame" style="border: none;"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <iframe src="https://www.example.com" width="100%" height="200" title="Mixed Additional Content Frame" style="border: none;"></iframe>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
